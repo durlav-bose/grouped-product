@@ -44,7 +44,6 @@ import { ApolloClientProvider, AppBridgeProvider, PolarisProvider, QueryProvider
 import { createContext, useState } from "react";
 import { Frame, Toast } from "@shopify/polaris";
 export const GroupProductContext = createContext("default");
-// const GroupProductContext = createContext("default");
 
 export default function App() {
 

@@ -5,6 +5,7 @@ import {
   TextContainer,
   DisplayText,
   TextStyle,
+  LegacyCard
 } from "@shopify/polaris";
 import { Toast } from "@shopify/app-bridge-react";
 import { useAppQuery, useAuthenticatedFetch } from "../hooks";
@@ -52,7 +53,7 @@ export function ProductsCard() {
   return (
     <>
       {toastMarkup}
-      <Card
+      <LegacyCard
         title="Product Counter"
         sectioned
         primaryFooterAction={{
@@ -75,7 +76,7 @@ export function ProductsCard() {
             </DisplayText>
           </Heading>
         </TextContainer>
-      </Card>
+      </LegacyCard>
     </>
   );
 }

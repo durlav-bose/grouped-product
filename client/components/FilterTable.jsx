@@ -9,6 +9,7 @@ import {
   Icon,
   Pagination,
   Autocomplete,
+  LegacyCard
 } from "@shopify/polaris";
 import React, { useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { DeleteMinor, EditMinor,SearchMinor } from "@shopify/polaris-icons";
@@ -220,7 +221,7 @@ function FilterTable({setHaveGroupProduct}) {
 
   return (
     <div style={{ height: "568px" }}>
-      <Card title="Product Group List">
+      <LegacyCard title="Product Group List">
         <div style={{ padding: "16px" }}>
         <Autocomplete
         options={options}
@@ -288,7 +289,7 @@ function FilterTable({setHaveGroupProduct}) {
             ])}
           />
         )}
-      </Card>
+      </LegacyCard>
       {
         groupProductList?.length > 0 && (
           <div

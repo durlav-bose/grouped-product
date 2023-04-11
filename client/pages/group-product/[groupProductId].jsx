@@ -78,8 +78,8 @@ function groupProduct() {
     >
       <div>
         <Analytics clickedRateViewed={clickedRateViewed} pruchasedRateViewed={pruchasedRateViewed} skeleton={skeleton} revenue={revenue}/>
-        {groupProductDateItem &&
-        groupProductDateItem?.groupProducts.length > 0 ? (
+        {groupProductDateItem
+         && groupName || groupProductDateItem?.groupProducts.length > 0 ? (
           <CreateOrUpdateGroupProductForm
             isUpdateForm={true}
             groupProductId={groupProductId}

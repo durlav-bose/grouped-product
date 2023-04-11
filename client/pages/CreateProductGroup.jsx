@@ -79,6 +79,7 @@ function CreateProductGroup() {
     setIsLoading(false);
     let status = data.success ? "success" : "error";
     setDefaultContextValues((prevState) => {
+      console.log("prevState..........", prevState);
       return {
         ...prevState,
         isShowToast: true,
