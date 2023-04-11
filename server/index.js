@@ -28,10 +28,21 @@ const PORT = parseInt(process.env.PORT, 10) || 8081;
 const isDev = process.env.NODE_ENV === "dev";
 
 // MongoDB Connection
-const mongoUrl =
-  process.env.MONGO_URL || "mongodb://127.0.0.1:27017/shopify-express-app";
+let mongoURL = process.env.MONGO_URL
+  ? process.env.MONGO_URL
+  : "mongodb://0.0.0.0:27017/grouped-product";
 
-mongoose.connect(mongoUrl);
+mongoose.set("strictQuery", false);
+
+mongoose
+  .connect(mongoURL)
+  .then(() => console.log("connection established.................."))
+  .catch((error) =>
+    console.log(
+      "mongoose error...............",
+      error
+    )
+  );
 
 // Register all webhook handlers
 webhookRegistrar();

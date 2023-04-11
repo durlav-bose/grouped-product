@@ -25,6 +25,17 @@ const webhookRegistrar = async () => {
       callbackUrl: "/webhooks/app_uninstalled",
       callback: appUninstallHandler,
     },
+    CARTS_UPDATE: {
+      deliveryMethod: DeliveryMethod.Http,
+      callbackUrl: "/webhooks/carts_update",
+      callback: async () => (topic, shop, body, webhookId) => {
+        console.log("-----topics----",  topic)
+        console.log("-----shop----",  shop)
+        console.log("-----body----",  body)
+        console.log("-----webhookId----",  webhookId);
+        // hello(); 
+      }
+    }
   });
 };
 

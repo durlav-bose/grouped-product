@@ -1,0 +1,38 @@
+{% comment %} {{ block.settings.product.handle }} {% endcomment %}
+
+<style>
+  .prdGrd__card--active {
+    box-shadow: 0 0 0 2px{{ block.settings.color }};
+  }
+</style>
+
+<div class="prdGrp" id="group-product"></div>
+
+
+
+<script>
+  const productId = {{ block.settings.product.id }}
+</script>
+<script defer src="{{ 'groupProduct.js' | asset_url }}"></script>
+
+{% schema %}
+  {
+    "name": "Group Product",
+    "templates": ["product"],
+    "target": "section",
+    "stylesheet": "groupProduct.css",
+    "settings": [
+      {
+        "type": "product",
+        "id": "product",
+        "label": "Product",
+        "autofill": true
+      }, {
+        "type": "color",
+        "id": "color",
+        "label": "Active Color",
+        "default": "#000"
+      }
+    ]
+  }
+{% endschema %}
